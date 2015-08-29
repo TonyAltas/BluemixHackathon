@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class TaskActivity extends AppCompatActivity {
 
@@ -11,6 +14,24 @@ public class TaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
+        submitButtion();
+    }
+
+    private void submitButtion() {
+
+        //get the reference to the button
+        Button submitButton = (Button)findViewById(R.id.submit);
+
+        //set the click listener to run my code
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(getBaseContext(), "You submitted", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     @Override
